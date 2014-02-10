@@ -35,6 +35,7 @@ end
 # This will only occur in the development and test environments:
 group :test, :development do
   gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-rails'
 end
