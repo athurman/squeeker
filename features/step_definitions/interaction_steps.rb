@@ -2,6 +2,10 @@ And "show me the page" do
   save_and_open_page
 end
 
+Given(/^the squeek "(.*?)"$/) do |body|
+  Squeek.create(body: body)
+end
+
 When(/^I go to the homepage$/) do
   visit root_path
 end
@@ -19,7 +23,12 @@ When(/^I fill in "(.*?)" with "(.*?)"$/) do |field, content|
 end
 
 Then(/^I should see "(.*?)" within the activity feed$/) do |text|
-  within(".activity_feed") do
+  within(".squeeks") do
     page.should have_content(text)
   end
+end
+
+Then (/^there should be a squeek "(.*?)" in the database$/) do |text|
+  squeek_count = Squeek.where(body: text).count
+  squeek_count.should == 1
 end

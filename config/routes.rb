@@ -3,8 +3,8 @@ Squeeker::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'squeeks#new'
-  resources :squeeks, only: [:create]
+  root 'squeeks#index'
+  resources :squeeks, only: [:index, :create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,5 @@
+
+= render partial: "squeeks/new"
+%ul.squeeks
+  - @squeeks.each do |squeek|
+    %li= squeek.body
