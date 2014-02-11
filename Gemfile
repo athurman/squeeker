@@ -1,3 +1,5 @@
+ruby '2.0.0'
+#ruby-gemset=squeeker
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -30,6 +32,11 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 # Use ActiveModel has_secure_password
